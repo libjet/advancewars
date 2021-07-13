@@ -633,7 +633,7 @@ SECTIONS {
 		asm/crt0.o(.text);
 		asm/code_8000100.o(.text);
 		src/main.o(.text);
-		asm/code_807ACBC.o(.text);
+		asm/code_807AC88.o(.text);
 	} >rom
 
 	.data : ALIGN(4) {
@@ -644,7 +644,7 @@ SECTIONS {
 		asm/crt0.o(.rodata);
 		asm/code_8000100.o(.rodata);
 		src/main.o(.text);
-		asm/code_807ACBC.o(.rodata);
+		asm/code_807AC88.o(.rodata);
 		
 	} >rom
 
