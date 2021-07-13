@@ -631,9 +631,9 @@ SECTIONS {
 
 	.text : ALIGN(4) {
 		asm/crt0.o(.text);
-		asm/libraries.o(.text);
+		asm/code_8000100.o(.text);
 		src/main.o(.text);
-		asm/code.o(.text);
+		asm/code_807ACBC.o(.text);
 	} >rom
 
 	.data : ALIGN(4) {
@@ -642,9 +642,9 @@ SECTIONS {
 
 	.rodata : ALIGN(4) {
 		asm/crt0.o(.rodata);
-		asm/libraries.o(.rodata);
+		asm/code_8000100.o(.rodata);
 		src/main.o(.text);
-		asm/code.o(.rodata);
+		asm/code_807ACBC.o(.rodata);
 		
 	} >rom
 
