@@ -19,6 +19,13 @@
 	.TYPE \name, function
 .ENDM
 
+.macro NON_WORD_ALIGNED_THUMB_FUNC_START name
+	.global \name
+	.thumb
+	.thumb_func
+	.type \name, function
+.endm
+
 .MACRO THUMB_FUNC_END name
 	.SIZE \name, .-\name
 .ENDM

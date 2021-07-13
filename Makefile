@@ -22,8 +22,8 @@ BUILD_NAME := advancewars
 CC1      := tools/agbcc/bin/agbcc$(EXE)
 CC1_OLD  := tools/agbcc/bin/old_agbcc$(EXE)
 
-CPPFLAGS := -I tools/agbcc/include -I tools/agbcc -iquote include -Wno-trigraphs
-CFLAGS   := -mthumb-interwork -Wimplicit -Werror -O2 -fhex-asm
+CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef
+CFLAGS   := -mno-thumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
 ASFLAGS  := -mcpu=arm7tdmi
 
 
