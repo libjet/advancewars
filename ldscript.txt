@@ -1,0 +1,17 @@
+OUTPUT_ARCH(arm)
+
+SECTIONS {
+	. = 0x02000000;
+
+	. = 0x08000000;
+	.text :
+	ALIGN(4) {
+		asm/crt0.o(.text);
+		asm/code.o(.text);
+	} = 0
+
+	/* Discard everything not specifically mentioned above. */
+	/DISCARD/ : {
+		*(*);
+	}
+}
