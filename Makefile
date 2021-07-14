@@ -86,3 +86,5 @@ clean:
 
 compare: $(ROM)
 	sha1sum -c rom.sha1
+
+$(C_BUILDDIR)/code_80001FC.o: CFLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
