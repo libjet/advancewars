@@ -634,6 +634,8 @@ SECTIONS {
 		asm/code_8000100.o(.text);
 		src/code_80001FC.o(.text);
 		asm/code_80001FC.o(.text);
+		src/code_802C470.o(.text);
+		asm/code_802C470.o(.text);
 		src/main.o(.text);
 		asm/code_807AC88.o(.text);
 	} >rom
@@ -647,6 +649,8 @@ SECTIONS {
 		asm/code_8000100.o(.rodata);
 		src/code_80001FC.o(.text);
 		asm/code_80001FC.o(.text);
+		src/code_802C470.o(.text);
+		asm/code_802C470.o(.text);
 		src/main.o(.text);
 		asm/code_807AC88.o(.rodata);
 		

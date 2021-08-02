@@ -1,15 +1,16 @@
 #include "global.h"
 
 struct unkStruct_020100B0 {
-	u8 unk0[2];
-	u16 unk2;
-	u16 unk4;
-	s8 unk6;
-	u8 unk7[5];
-	u32 unkc;
-	u8 unk10[0x36];
-	s16 unk46;
-	s16 unk48;
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    s8 unk6;
+    s8 unk7;
+    u8 unk8[4];
+    s32 unkc;
+    u8 unk10[0x36];
+    s16 unk46;
+    s16 unk48;
 };
 
 extern struct unkStruct_020100B0 *gUnknown_020100B0;

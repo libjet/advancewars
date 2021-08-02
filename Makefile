@@ -22,9 +22,10 @@ BUILD_NAME := advancewars
 CC1      := tools/agbcc/bin/agbcc$(EXE)
 CC1_OLD  := tools/agbcc/bin/old_agbcc$(EXE)
 
-CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef
-CFLAGS   := -mno-thumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
-ASFLAGS  := -mcpu=arm7tdmi
+CPPFLAGS   := -I tools/agbcc/include -iquote include -nostdinc -undef
+CFLAGS     := -mno-thumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
+CFLAGS_LIB := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
+ASFLAGS    := -mcpu=arm7tdmi
 
 
 C_SUBDIR = src
@@ -87,4 +88,8 @@ clean:
 compare: $(ROM)
 	sha1sum -c rom.sha1
 
-$(C_BUILDDIR)/code_80001FC.o: CFLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
+# Apparently this is library code which was built with different flags and a different compiler
+$(C_BUILDDIR)/code_80001FC.o: CFLAGS := $(CFLAGS_LIB)
+$(C_BUILDDIR)/code_80001FC.o: CC1    := tools/agbcc/bin/old_agbcc$(EXE)
+$(C_BUILDDIR)/code_802C470.o: CFLAGS := $(CFLAGS_LIB)
+$(C_BUILDDIR)/code_802C470.o: CC1    := tools/agbcc/bin/old_agbcc$(EXE)
